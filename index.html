@@ -52,5 +52,27 @@
         </tr>
       </tbody>
     </table>
+    <hr>
+    <blockquote cite="https://css-tricks.com/snippets/wordpress/dump-all-custom-fields/">
+      <h3>All Post Meta</h3>
+      <?php 
+      
+        // Get all the data 
+        $getPostCustom = get_post_custom(); 
+      
+          foreach($getPostCustom as $name=>$value) {
+      
+              echo "<strong>" . $name . "</strong>"."  =>  ";
+      
+              foreach ($value as $nameAr=>$valueAr) {
+                      echo "<br />";
+                      echo $nameAr."  =>  ";
+                      echo var_dump($valueAr);
+              }
+      
+              echo "<br /><br />";
+      
+          }
+      ?></blockquote>
   </body>
 </html>
